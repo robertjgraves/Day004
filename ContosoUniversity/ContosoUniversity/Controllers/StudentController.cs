@@ -25,7 +25,7 @@ namespace ContosoUniversity.Controllers
             switch (sortOrder)
             {
                 case "name_desc":
-                    students = students.OrderByDescending(student => student.LastName);
+                    students = students.OrderByDescending(s => s.LastName);
                     break;
                 case "Date":
                     students = students.OrderBy(s => s.EnrollmentDate);
@@ -37,7 +37,7 @@ namespace ContosoUniversity.Controllers
                     students = students.OrderBy(s => s.LastName);
                     break;
             }
-            return View(db.Students.ToList());
+            return View(students.ToList());
         }
 
         // GET: /Student/Details/5
